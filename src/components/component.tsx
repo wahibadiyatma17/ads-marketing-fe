@@ -134,7 +134,7 @@ export function AdsLanding() {
               </div>
               <div className="flex flex-col items-center w-full justify-center gap-6">
                 <span className="text-2xl text-center text-black">
-                  We don’t accept haram (prohibited according to Islam) and illegal (prohibited
+                  We don&apos;t accept haram (prohibited according to Islam) and illegal (prohibited
                   according to law).
                 </span>
                 <span className="text-2xl text-center text-black">
@@ -153,7 +153,7 @@ export function AdsLanding() {
                     Start Advertising Now
                   </h2>
                   <p className="max-w-[900px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    Send us a message, and we'll get back to you soon! InsyaAllah
+                    Send us a message, and we&apos;ll get back to you soon! InsyaAllah
                   </p>
                 </div>
                 <div className="mx-auto w-full max-w-md space-y-4">
