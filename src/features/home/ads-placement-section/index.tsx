@@ -1,11 +1,14 @@
 import { ADS_PLACEMENT_OPTIONS, AdsPlacementKey } from '@/lib/constants';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { FC, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
 
 const AdsPlacement: FC = () => {
   const [activeAds, setActiveAds] = useState<AdsPlacementKey>('learn-quran-tajwid');
+  const router = useRouter();
 
   function NextArrow(props: any) {
     const { style, onClick } = props;
@@ -176,7 +179,10 @@ const AdsPlacement: FC = () => {
             according to law).
           </span>
           <span className="text-xl sm:text-2xl text-center text-black">
-            See your ads format and size <u className="cursor-pointer">here.</u>
+            See your ads format and size{' '}
+            <Link href={'/ad-sizes'} target="_blank">
+              <u className="cursor-pointer">here.</u>
+            </Link>
           </span>
         </div>
       </div>
