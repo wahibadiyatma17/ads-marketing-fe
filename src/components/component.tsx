@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import toast, { Toaster } from 'react-hot-toast';
 import styled from 'styled-components';
+import AdsPlacement from './ads-placement/index';
 
 export function AdsLanding() {
   return (
@@ -124,26 +125,8 @@ export function AdsLanding() {
           </div>
         </section>
 
-        <section className="bg-white">
-          <div className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center bg-white max-w-[1440px] mx-auto">
-            <div className="container space-y-12 px-4 md:px-6 flex flex-col items-center ">
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]">
-                  Ads Placement
-                </h2>
-              </div>
-              <div className="flex flex-col items-center w-full justify-center gap-6">
-                <span className="text-2xl text-center text-black">
-                  We don&apos;t accept haram (prohibited according to Islam) and illegal (prohibited
-                  according to law).
-                </span>
-                <span className="text-2xl text-center text-black">
-                  See your ads format and size <u className="cursor-pointer">here.</u>
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <AdsPlacement />
+
         <section className="bg-[#EDEFF7]">
           <div className="w-full   py-12 md:py-24 lg:py-32 bg-[#EDEFF7] flex items-center justify-center">
             <div className="container px-4 md:px-6">

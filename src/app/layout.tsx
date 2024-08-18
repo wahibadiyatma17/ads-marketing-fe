@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Judson, Libre_Franklin } from 'next/font/google';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import './globals.css';
-import { Libre_Franklin } from 'next/font/google';
-import { Judson } from 'next/font/google';
 
 const libre_franklin = Libre_Franklin({
   subsets: ['latin'],
@@ -28,6 +28,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+        />
+      </head>
       <body className={libre_franklin.variable + ' ' + judson.variable}>{children}</body>
     </html>
   );
