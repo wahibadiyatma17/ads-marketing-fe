@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-judson), serif;
   color: rgb(var(--foreground-rgb));

@@ -1,5 +1,5 @@
-import { AdsLanding } from '@/components/component';
+import { Home } from '@/features/home/index';
 
-export default function Home() {
-  return <AdsLanding />;
+export default function HomePage() {
+  return <Home />;
 }
