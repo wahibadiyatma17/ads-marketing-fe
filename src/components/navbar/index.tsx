@@ -10,8 +10,8 @@ const Navbar = () => {
   };
 
   return (
-    <section className="bg-white">
-      <div className="border-b-4 sticky top-0">
+    <section className="bg-white sticky top-0 z-[999]">
+      <div className="border-b-4">
         <header className="px-4 lg:px-6 py-2 flex items-center w-full justify-between bg-white max-w-[1440px] mx-auto">
           <Link className="flex items-center justify-start gap-4" href="/">
             <Image src={'/logo-lq.png'} alt="logo" width={56} height={56} />
@@ -32,13 +32,13 @@ const Navbar = () => {
             </Link>
             <Link
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#terms"
+              href="#ad-placement"
             >
               Terms
             </Link>
             <Link
               className="text-[20px] font-medium text-white bg-[#022739] px-4 py-2 rounded-lg"
-              href="#"
+              href="#start-advertise-now"
             >
               Get Started
             </Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
             </Link>
             <Link
               className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#terms"
+              href="#ad-placement"
             >
               Terms
             </Link>
