@@ -57,8 +57,37 @@ const AdSizes: FC = () => {
           </div>
 
           {activeAds === 'quran-mushaf' ? (
-            <div className="flex items-center justify-center flex-1">
-              <span className="text-black text-xl font-semibold">Unknown</span>
+            <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+              <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                Banner Ads
+              </span>
+
+              <div className="flex flex-col gap-2 w-full items-center justify-center">
+                <span className="text-black text-base md:text-lg">Banner Page Info</span>
+                <div className="h-[50px] w-full max-w-[300px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                  <span className="text-black text-base md:text-lg">300px x 50px</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 w-full items-center justify-center">
+                <span className="text-black text-base md:text-lg">Banner Menu</span>
+                <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                  <span className="text-black text-base md:text-lg">320px x 70px</span>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2 w-full items-center justify-center">
+                <span className="text-black text-base md:text-lg">Banner Exit</span>
+                <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                  <span className="text-black text-base md:text-lg">320px x 70px</span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2 w-full items-center justify-center">
+                <span className="text-black text-base md:text-lg">Banner Open App</span>
+                <div className="h-[420px] w-full max-w-[420px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                  <span className="text-black text-base md:text-lg">420px x 420px</span>
+                </div>
+              </div>
             </div>
           ) : (
             <>
@@ -67,40 +96,70 @@ const AdSizes: FC = () => {
                   Banner Ads
                 </span>
 
-                <div className="h-[90px] w-full max-w-[970px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-lg md:text-xl">970px x 90px</span>
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">Banner</span>
+                  <div className="h-[50px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">320px x 50px</span>
+                  </div>
                 </div>
 
-                <div className="h-[90px] w-full max-w-[728px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-lg md:text-xl">728px x 90px</span>
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">Large Banner</span>
+                  <div className="h-[100px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">320px x 100px</span>
+                  </div>
                 </div>
 
-                <div className="h-[60px] w-full max-w-[468px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-lg md:text-xl">468px x 60px</span>
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">IAB Medium Rectangle</span>
+                  <div className="h-[250px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">320px x 250px</span>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">IAB Full-Size Banner</span>
+                  <div className="h-[60px] w-full max-w-[468px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">468px x 60px</span>
+                  </div>
                 </div>
 
-                <div className="h-[100px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-lg md:text-xl">320px x 100px</span>
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">IAB Leaderboard</span>
+                  <div className="h-[90px] w-full max-w-[728px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">728px x 90px</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                  Open App Ads
-                </span>
+              <div className="flex flex-col md:flex-row gap-5 items-center justify-center flex-1 w-full">
+                <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Open App Ads
+                  </span>
 
-                <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-xl">Full Screen</span>
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                  Rewarded Ads
-                </span>
+                <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Rewarded Ads
+                  </span>
 
-                <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-xl">Full Screen</span>
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Interstitial Ads
+                  </span>
+
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
                 </div>
               </div>
             </>

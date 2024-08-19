@@ -47,7 +47,7 @@ const AdsPlacement: FC = () => {
   };
 
   return (
-    <section className="bg-white">
+    <section className="bg-white" id="ad-placement">
       <div className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center bg-white max-w-[1440px] mx-auto gap-10">
         <div className="container space-y-12 px-4 md:px-6 flex flex-col items-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -173,7 +173,7 @@ const AdsPlacement: FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center w-full justify-center gap-6">
+        <div className="flex flex-col items-center w-full justify-center gap-6" id="terms">
           <span className="text-xl sm:text-2xl text-center text-black">
             We don&apos;t accept haram (prohibited according to Islam) and illegal (prohibited
             according to law).

@@ -13,34 +13,28 @@ const Navbar = () => {
     <section className="bg-white">
       <div className="border-b-4 sticky top-0">
         <header className="px-4 lg:px-6 py-2 flex items-center w-full justify-between bg-white max-w-[1440px] mx-auto">
-          <Link className="flex items-center justify-start gap-4" href="#">
+          <Link className="flex items-center justify-start gap-4" href="/">
             <Image src={'/logo-lq.png'} alt="logo" width={56} height={56} />
             <span className="text-black text-[24px]">Learn Quran</span>
           </Link>
           <nav className="hidden md:flex gap-4 sm:gap-6 items-center justify-center">
             <Link
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#"
+              href="#advatages-section"
             >
               Advantages
             </Link>
             <Link
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#"
+              href="#ad-placement"
             >
               Ad Placement
             </Link>
             <Link
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#"
+              href="#terms"
             >
               Terms
-            </Link>
-            <Link
-              className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#"
-            >
-              Info
             </Link>
             <Link
               className="text-[20px] font-medium text-white bg-[#022739] px-4 py-2 rounded-lg"
@@ -76,27 +70,21 @@ const Navbar = () => {
           <nav className="md:hidden bg-white px-4 py-2">
             <Link
               className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#"
+              href="#advatages-section"
             >
               Advantages
             </Link>
             <Link
               className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#"
+              href="#ad-placement"
             >
               Ad Placement
             </Link>
             <Link
               className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#"
+              href="#terms"
             >
               Terms
-            </Link>
-            <Link
-              className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#"
-            >
-              Info
             </Link>
             <Link
               className="block text-[20px] font-medium text-white bg-[#022739] px-4 py-2 rounded-lg mt-2"

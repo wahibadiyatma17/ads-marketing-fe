@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 const AdvertisingReasonSection: FC = () => {
   return (
-    <section className="bg-[#EDEFF7]">
+    <section className="bg-[#EDEFF7]" id="advatages-section">
       <div className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center bg-[#EDEFF7] max-w-[1440px] mx-auto">
         <div className="container space-y-12 px-4 md:px-6 flex flex-col items-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
