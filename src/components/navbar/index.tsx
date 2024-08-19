@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="border-b-4">
         <header className="px-4 lg:px-6 py-2 flex items-center w-full justify-between bg-white max-w-[1440px] mx-auto">
           <Link className="flex items-center justify-start gap-4" href="/">
-            <Image src={'/logo-lq.png'} alt="logo" width={56} height={56} />
+            <Image src={'/logo-lq.webp'} alt="logo" width={56} height={56} />
             <span className="text-black text-[24px]">Learn Quran</span>
           </Link>
           <nav className="hidden md:flex gap-4 sm:gap-6 items-center justify-center">
@@ -28,7 +28,7 @@ const Navbar = () => {
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
               href="#ad-placement"
             >
-              Ad Placement
+              Ad Placements
             </Link>
             <Link
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"

@@ -7,12 +7,18 @@ const AdSizes: FC = () => {
 
   return (
     <section className="bg-white">
-      <div className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center bg-white max-w-[1440px] mx-auto gap-10">
+      <div className="w-full py-12 flex flex-col items-center justify-center bg-white max-w-[1440px] mx-auto gap-10">
         <div className="container space-y-12 px-4 md:px-6 flex flex-col items-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]">
-              Ad Sizes
+              Ads Format and Size
             </h2>
+
+            <p className="text-black text-base md:text-xl md:max-w-[50%]">
+              Discover the different ad formats and sizes we offer to ensure your advertisements fit
+              seamlessly and perform effectively. Tailor your ads to our specifications for the best
+              visibility and impact on our platform.
+            </p>
           </div>
 
           <div className="flex flex-col w-full flex-1 gap-10 items-center">
@@ -58,9 +64,12 @@ const AdSizes: FC = () => {
 
           {activeAds === 'quran-mushaf' ? (
             <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-              <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                Banner Ads
-              </span>
+              <div className="flex flex-col items-center justify-center">
+                <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                  Banner Ads
+                </span>
+                <span className="text-black text-base md:text-lg font-light">Format: Image</span>
+              </div>
 
               <div className="flex flex-col gap-2 w-full items-center justify-center">
                 <span className="text-black text-base md:text-lg">Banner Page Info</span>
@@ -92,9 +101,12 @@ const AdSizes: FC = () => {
           ) : (
             <>
               <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                  Banner Ads
-                </span>
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Banner Ads
+                  </span>
+                  <span className="text-black text-base md:text-lg font-light">Format: Image</span>
+                </div>
 
                 <div className="flex flex-col gap-2 w-full items-center justify-center">
                   <span className="text-black text-base md:text-lg">Banner</span>
@@ -133,9 +145,14 @@ const AdSizes: FC = () => {
 
               <div className="flex flex-col md:flex-row gap-5 items-center justify-center flex-1 w-full">
                 <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                    Open App Ads
-                  </span>
+                  <div className="flex flex-col items-center justify-center">
+                    <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                      Open App Ads
+                    </span>
+                    <span className="text-black text-base md:text-lg font-light">
+                      Format: Image & Video
+                    </span>
+                  </div>
 
                   <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
                     <span className="text-black text-xl">Full Screen</span>
@@ -143,9 +160,14 @@ const AdSizes: FC = () => {
                 </div>
 
                 <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                    Rewarded Ads
-                  </span>
+                  <div className="flex flex-col items-center justify-center">
+                    <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                      Rewarded Ads
+                    </span>
+                    <span className="text-black text-base md:text-lg font-light">
+                      Format: Image & Video
+                    </span>
+                  </div>
 
                   <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
                     <span className="text-black text-xl">Full Screen</span>
@@ -153,9 +175,14 @@ const AdSizes: FC = () => {
                 </div>
 
                 <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                    Interstitial Ads
-                  </span>
+                  <div className="flex flex-col items-center justify-center">
+                    <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                      Interstitial Ads
+                    </span>
+                    <span className="text-black text-base md:text-lg font-light">
+                      Format: Image & Video
+                    </span>
+                  </div>
 
                   <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
                     <span className="text-black text-xl">Full Screen</span>

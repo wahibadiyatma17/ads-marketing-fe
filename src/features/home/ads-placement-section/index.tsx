@@ -52,7 +52,7 @@ const AdsPlacement: FC = () => {
         <div className="container space-y-12 px-4 md:px-6 flex flex-col items-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]">
-              Ads Placement
+              Ad Placements
             </h2>
           </div>
 
@@ -175,13 +175,13 @@ const AdsPlacement: FC = () => {
         </div>
         <div className="flex flex-col items-center w-full justify-center gap-6" id="terms">
           <span className="text-xl sm:text-2xl text-center text-black">
-            We don&apos;t accept haram (prohibited according to Islam) and illegal (prohibited
-            according to law).
+            We don&apos;t accept haram (prohibited according to Islam) or illegal (prohibited by
+            law) content.
           </span>
           <span className="text-xl sm:text-2xl text-center text-black">
-            See your ads format and size{' '}
+            See your ad format and size options{' '}
             <Link href={'/ad-sizes'} target="_blank">
-              <u className="cursor-pointer">here.</u>
+              <u className="cursor-pointer text-blue-600">here.</u>
             </Link>
           </span>
         </div>

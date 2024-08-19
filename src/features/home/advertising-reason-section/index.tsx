@@ -37,7 +37,7 @@ const AdvertisingReasonSection: FC = () => {
                 />
               </div>
               <h3 className="text-2xl sm:text-3xl text-center font-bold text-[#022739]">
-                Various Ads Placement
+                Various Ads Placement Options
               </h3>
             </div>
             <div className="grid gap-1">

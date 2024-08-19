@@ -48,7 +48,7 @@ const StartAdvertisingSection: FC = () => {
                 Start Advertising Now
               </h2>
               <p className="max-w-[900px] text-black text-base md:text-lg lg:text-xl">
-                Send us a message, and we&apos;ll get back to you soon! InsyaAllah
+                Send us a message, and we&apos;ll get back to you soon, InshaAllah!
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-lg space-y-4">

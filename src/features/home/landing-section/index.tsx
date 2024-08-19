@@ -8,7 +8,7 @@ const LandingSection: FC = () => {
       <div className="w-full py-12 md:py-24 bg-white max-w-[1440px] mx-auto">
         <div className="px-4 md:px-6 gap-10">
           <h1 className="px-4 sm:px-6 md:px-10 mx-auto lg:leading-tighter text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter text-black text-left">
-            Reach Global Muslim Audience
+            Reach a Global Muslim Audience
           </h1>
 
           <div className="grid mx-auto gap-4 px-4 sm:px-6 md:px-10 md:grid-cols-2 md:gap-16 items-center my-10">
@@ -19,11 +19,11 @@ const LandingSection: FC = () => {
 
               <h3 className="lg:leading-tighter text-2xl sm:text-3xl md:text-5xl font-semibold tracking-tighter text-[#464646]">
                 <span>
-                  To <span className="text-black">thousands</span> of users
+                  To <span className="text-black">thousands</span> of users,
                 </span>
                 <br />
                 <span>
-                  To <span className="text-black">hundreds</span> of countries
+                  across <span className="text-black">hundreds</span> of countries
                 </span>
               </h3>
             </div>
