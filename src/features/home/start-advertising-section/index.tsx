@@ -14,7 +14,7 @@ type FormInput = {
 };
 
 const StartAdvertisingSection: FC = () => {
-  const { handleSubmit, setValue, reset } = useForm<FormInput>();
+  const { handleSubmit, setValue } = useForm<FormInput>();
   const onSubmit: SubmitHandler<FormInput> = async (data) => {
     if (!data.fullname && !data.email && !data.budget && !data.businessEntityName)
       return toast.error('Form can not be empty');
@@ -23,17 +23,27 @@ const StartAdvertisingSection: FC = () => {
     if (!data.businessEntityName) return toast.error('Business/entity name can not be empty');
     if (!data.budget) return toast.error('Advertising Budget can not be empty');
 
+    const botToken = '7404845445:AAEjf6AZ0T_jbT2dymUF818Ow-amWgDQFrY';
+    const chatId = '-4501363919';
+    const message = `A new client has been registered with the following details:\n\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
+
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+      message,
+    )}`;
+
     try {
-      const docRef = await addDoc(collection(db, 'advertise-form'), {
+      await addDoc(collection(db, 'advertise-form'), {
         fullname: data.fullname,
         email: data.email,
         businessEntityName: data.businessEntityName,
         budget: data.budget,
       });
+
+      await fetch(url, {
+        method: 'POST',
+      });
       toast.success('Message sent!');
-      reset();
     } catch (e) {
-      console.log('wahib e', e);
       toast.error('Server Error');
     }
   };
@@ -76,12 +86,12 @@ const StartAdvertisingSection: FC = () => {
                   allowClear
                   onChange={(e) => setValue('budget', e as string)}
                   options={[
-                    { value: '<100', label: '<100' },
-                    { value: '100-500', label: '100-500' },
-                    { value: '500-1000', label: '500-1000' },
-                    { value: '1000-5000', label: '1000-5000' },
-                    { value: '5000-10000', label: '5000-10000' },
-                    { value: '>10000', label: '>10000' },
+                    { value: '<100 USD', label: '<100 USD' },
+                    { value: '100 USD - 500 USD', label: '100 USD - 500 USD' },
+                    { value: '500 USD - 1000 USD', label: '500 USD - 1000 USD' },
+                    { value: '1000 USD - 5000 USD', label: '1000 USD - 5000 USD' },
+                    { value: '5000 USD - 10000 USD', label: '5000 USD - 10000 USD' },
+                    { value: '>10000 USD', label: '>10000 USD' },
                   ]}
                 />
 
@@ -103,7 +113,8 @@ const StartAdvertisingSection: FC = () => {
 export default StartAdvertisingSection;
 
 const StyledSelect = styled(Select)`
-  .ant-select-selection-placeholder {
+  .ant-select-selection-placeholder,
+  .ant-select-selection-item {
     flex: none;
   }
 `;
