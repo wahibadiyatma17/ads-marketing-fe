@@ -173,7 +173,7 @@ const AdsPlacement: FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center w-full justify-center gap-6" id="terms">
+        <div className="flex flex-col items-center w-full justify-center gap-6 px-4" id="terms">
           <span className="text-xl sm:text-2xl text-center text-black">
             We don&apos;t accept haram (prohibited according to Islam) or illegal (prohibited by
             law) content.
