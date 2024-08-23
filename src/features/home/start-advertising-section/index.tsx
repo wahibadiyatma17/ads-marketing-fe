@@ -27,7 +27,7 @@ const StartAdvertisingSection: FC = () => {
     const botToken = '7404845445:AAEjf6AZ0T_jbT2dymUF818Ow-amWgDQFrY';
     const chatId = '-4501363919';
     const currentDate = moment(new Date()).format('DD MMM YYYY');
-    const message = `A new client has been registered with the following details:\n\nTanggal: ${currentDate}\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
+    const message = `A new client has been registered with the following details:\n\Date: ${currentDate}\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
       message,
