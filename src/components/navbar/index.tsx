@@ -31,12 +31,6 @@ const Navbar = () => {
               Ad Placements
             </Link>
             <Link
-              className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#ad-placement"
-            >
-              Terms
-            </Link>
-            <Link
               className="text-[20px] font-medium text-white bg-[#022739] px-4 py-2 rounded-lg"
               href="#start-advertise-now"
             >
@@ -79,12 +73,6 @@ const Navbar = () => {
               href="#ad-placement"
             >
               Ad Placement
-            </Link>
-            <Link
-              className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#ad-placement"
-            >
-              Terms
             </Link>
             <Link
               className="block text-[20px] font-medium text-white bg-[#022739] px-4 py-2 rounded-lg mt-2"

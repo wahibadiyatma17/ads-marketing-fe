@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { collection, addDoc } from 'firebase/firestore';
 import db from '@/lib/firestore';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import moment from 'moment';
 
 type FormInput = {
   fullname: string;
@@ -25,7 +26,8 @@ const StartAdvertisingSection: FC = () => {
 
     const botToken = '7404845445:AAEjf6AZ0T_jbT2dymUF818Ow-amWgDQFrY';
     const chatId = '-4501363919';
-    const message = `A new client has been registered with the following details:\n\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
+    const currentDate = moment(new Date()).format('DD MMM YYYY');
+    const message = `A new client has been registered with the following details:\n\nTanggal: ${currentDate}\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
       message,
@@ -37,6 +39,7 @@ const StartAdvertisingSection: FC = () => {
         email: data.email,
         businessEntityName: data.businessEntityName,
         budget: data.budget,
+        date: currentDate,
       });
 
       await fetch(url, {

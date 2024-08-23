@@ -103,7 +103,7 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
-                          src={`/ad-placement/${activeAds}-ad-1.png`}
+                          src={`/ad-placement/${activeAds}-ad-1.webp`}
                           alt={`ads ${activeAds}`}
                           layout="fill"
                           objectFit="contain"
@@ -115,7 +115,7 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
-                          src={`/ad-placement/${activeAds}-ad-2.png`}
+                          src={`/ad-placement/${activeAds}-ad-2.webp`}
                           alt={`ads ${activeAds}`}
                           layout="fill"
                           objectFit="contain"
@@ -127,7 +127,7 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
-                          src={`/ad-placement/${activeAds}-ad-3.png`}
+                          src={`/ad-placement/${activeAds}-ad-3.webp`}
                           alt={`ads ${activeAds}`}
                           layout="fill"
                           objectFit="contain"
@@ -141,7 +141,7 @@ const AdsPlacement: FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                       <Image
-                        src={`/ad-placement/${activeAds}-ad-1.png`}
+                        src={`/ad-placement/${activeAds}-ad-1.webp`}
                         alt={`ads ${activeAds}`}
                         layout="fill"
                         objectFit="contain"
@@ -151,7 +151,7 @@ const AdsPlacement: FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                       <Image
-                        src={`/ad-placement/${activeAds}-ad-2.png`}
+                        src={`/ad-placement/${activeAds}-ad-2.webp`}
                         alt={`ads ${activeAds}`}
                         layout="fill"
                         objectFit="contain"
@@ -161,7 +161,7 @@ const AdsPlacement: FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                       <Image
-                        src={`/ad-placement/${activeAds}-ad-3.png`}
+                        src={`/ad-placement/${activeAds}-ad-3.webp`}
                         alt={`ads ${activeAds}`}
                         layout="fill"
                         objectFit="contain"

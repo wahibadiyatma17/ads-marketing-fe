@@ -5,6 +5,240 @@ import { FC, useState } from 'react';
 const AdSizes: FC = () => {
   const [activeAds, setActiveAds] = useState<AdsPlacementKey>('learn-quran-tajwid');
 
+  const renderAdSize = (app: AdsPlacementKey) => {
+    switch (app) {
+      case 'learn-quran-tafsir':
+        return (
+          <>
+            <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+              <div className="flex flex-col items-center justify-center">
+                <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                  Banner Ads
+                </span>
+                <span className="text-black text-base md:text-lg font-light">Format: Image</span>
+              </div>
+
+              <div className="flex flex-col gap-2 w-full items-center justify-center">
+                <span className="text-black text-base md:text-lg">IAB Full-Size Banner</span>
+                <div className="h-[60px] w-full max-w-[468px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                  <span className="text-black text-base md:text-lg">468px x 60px</span>
+                </div>
+              </div>
+              <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
+                <Image
+                  src={`/ad-placement/${app}-ad-2.webp`}
+                  alt={`ads ${app}`}
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-5 md:gap-10 items-center justify-center flex-1 w-full">
+              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Open App Ads
+                  </span>
+                  <span className="text-black text-base md:text-lg font-light">
+                    Format: Image & Video
+                  </span>
+                </div>
+                <div className="flex flex-col md:flex-row gap-5">
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] sm:min-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
+
+                  <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
+                    <Image
+                      src={`/ad-placement/${app}-ad-3.webp`}
+                      alt={`ads ${app}`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Rewarded Ads
+                  </span>
+                  <span className="text-black text-base md:text-lg font-light">
+                    Format: Image & Video
+                  </span>
+                </div>
+                <div className="flex flex-col md:flex-row gap-5">
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] sm:min-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
+
+                  <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
+                    <Image
+                      src={`/ad-placement/${app}-ad-1.webp`}
+                      alt={`ads ${app}`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+
+      case 'learn-quran-tajwid':
+        return (
+          <>
+            <div className="flex flex-col gap-5 md:gap-10 items-center justify-center flex-1 w-full">
+              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Open App Ads
+                  </span>
+                  <span className="text-black text-base md:text-lg font-light">
+                    Format: Image & Video
+                  </span>
+                </div>
+                <div className="flex flex-col md:flex-row gap-5">
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] sm:min-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
+
+                  <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
+                    <Image
+                      src={`/ad-placement/${app}-ad-1.webp`}
+                      alt={`ads ${app}`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Rewarded Ads
+                  </span>
+                  <span className="text-black text-base md:text-lg font-light">
+                    Format: Image & Video
+                  </span>
+                </div>
+                <div className="flex flex-col md:flex-row gap-5">
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] sm:min-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
+
+                  <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
+                    <Image
+                      src={`/ad-placement/${app}-ad-2.webp`}
+                      alt={`ads ${app}`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                    Intestitial Ads
+                  </span>
+                  <span className="text-black text-base md:text-lg font-light">
+                    Format: Image & Video
+                  </span>
+                </div>
+                <div className="flex flex-col md:flex-row gap-5">
+                  <div className="w-full max-w-[250px] sm:max-w-[320px] sm:min-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-xl">Full Screen</span>
+                  </div>
+
+                  <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
+                    <Image
+                      src={`/ad-placement/${app}-ad-3.webp`}
+                      alt={`ads ${app}`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      case 'quran-mushaf':
+        return (
+          <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
+            <div className="flex flex-col items-center justify-center">
+              <span className="font-semibold text-black text-lg md:text-2xl text-center">
+                Banner Ads
+              </span>
+              <span className="text-black text-base md:text-lg font-light">Format: Image</span>
+            </div>
+
+            <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">Banner Menu</span>
+                  <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">320px x 70px</span>
+                  </div>
+                </div>
+
+                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
+                  <Image
+                    src={`/ad-placement/${activeAds}-ad-1.webp`}
+                    alt={`ads ${activeAds}`}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">Banner Exit</span>
+                  <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">320px x 70px</span>
+                  </div>
+                </div>
+
+                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
+                  <Image
+                    src={`/ad-placement/${activeAds}-ad-3.webp`}
+                    alt={`ads ${activeAds}`}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-2 w-full items-center justify-center">
+                  <span className="text-black text-base md:text-lg">Banner Open App</span>
+                  <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">420px x 420px</span>
+                  </div>
+                </div>
+
+                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
+                  <Image
+                    src={`/ad-placement/${activeAds}-ad-2.webp`}
+                    alt={`ads ${activeAds}`}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+    }
+  };
+
   return (
     <section className="bg-white">
       <div className="w-full py-12 flex flex-col items-center justify-center bg-white max-w-[1440px] mx-auto gap-10">
@@ -61,136 +295,7 @@ const AdSizes: FC = () => {
               })}
             </div>
           </div>
-
-          {activeAds === 'quran-mushaf' ? (
-            <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-              <div className="flex flex-col items-center justify-center">
-                <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                  Banner Ads
-                </span>
-                <span className="text-black text-base md:text-lg font-light">Format: Image</span>
-              </div>
-
-              <div className="flex flex-col gap-2 w-full items-center justify-center">
-                <span className="text-black text-base md:text-lg">Banner Page Info</span>
-                <div className="h-[50px] w-full max-w-[300px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-base md:text-lg">300px x 50px</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2 w-full items-center justify-center">
-                <span className="text-black text-base md:text-lg">Banner Menu</span>
-                <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-base md:text-lg">320px x 70px</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2 w-full items-center justify-center">
-                <span className="text-black text-base md:text-lg">Banner Exit</span>
-                <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-base md:text-lg">320px x 70px</span>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2 w-full items-center justify-center">
-                <span className="text-black text-base md:text-lg">Banner Open App</span>
-                <div className="h-[420px] w-full max-w-[420px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-base md:text-lg">420px x 420px</span>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                <div className="flex flex-col items-center justify-center">
-                  <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                    Banner Ads
-                  </span>
-                  <span className="text-black text-base md:text-lg font-light">Format: Image</span>
-                </div>
-
-                <div className="flex flex-col gap-2 w-full items-center justify-center">
-                  <span className="text-black text-base md:text-lg">Banner</span>
-                  <div className="h-[50px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">320px x 50px</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 w-full items-center justify-center">
-                  <span className="text-black text-base md:text-lg">Large Banner</span>
-                  <div className="h-[100px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">320px x 100px</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 w-full items-center justify-center">
-                  <span className="text-black text-base md:text-lg">IAB Medium Rectangle</span>
-                  <div className="h-[250px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">320px x 250px</span>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2 w-full items-center justify-center">
-                  <span className="text-black text-base md:text-lg">IAB Full-Size Banner</span>
-                  <div className="h-[60px] w-full max-w-[468px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">468px x 60px</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 w-full items-center justify-center">
-                  <span className="text-black text-base md:text-lg">IAB Leaderboard</span>
-                  <div className="h-[90px] w-full max-w-[728px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">728px x 90px</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row gap-5 items-center justify-center flex-1 w-full">
-                <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                      Open App Ads
-                    </span>
-                    <span className="text-black text-base md:text-lg font-light">
-                      Format: Image & Video
-                    </span>
-                  </div>
-
-                  <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-xl">Full Screen</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                      Rewarded Ads
-                    </span>
-                    <span className="text-black text-base md:text-lg font-light">
-                      Format: Image & Video
-                    </span>
-                  </div>
-
-                  <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-xl">Full Screen</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-5 w-full flex-1 items-center justify-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <span className="font-semibold text-black text-lg md:text-2xl text-center">
-                      Interstitial Ads
-                    </span>
-                    <span className="text-black text-base md:text-lg font-light">
-                      Format: Image & Video
-                    </span>
-                  </div>
-
-                  <div className="w-full max-w-[250px] sm:max-w-[320px] h-[400px] sm:h-[568px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-xl">Full Screen</span>
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
+          {renderAdSize(activeAds)}
         </div>
       </div>
     </section>
