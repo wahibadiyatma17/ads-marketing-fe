@@ -188,7 +188,7 @@ const AdSizes: FC = () => {
                   </div>
                 </div>
 
-                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
+                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
                     src={`/ad-placement/${activeAds}-ad-1.webp`}
                     alt={`ads ${activeAds}`}
@@ -206,7 +206,7 @@ const AdSizes: FC = () => {
                   </div>
                 </div>
 
-                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
+                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
                     src={`/ad-placement/${activeAds}-ad-3.webp`}
                     alt={`ads ${activeAds}`}
@@ -224,7 +224,7 @@ const AdSizes: FC = () => {
                   </div>
                 </div>
 
-                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
+                <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
                     src={`/ad-placement/${activeAds}-ad-2.webp`}
                     alt={`ads ${activeAds}`}
@@ -284,6 +284,7 @@ const AdSizes: FC = () => {
                     </div>
 
                     <span
+                      style={{ fontFamily: "'Quattrocento', serif" }}
                       className={`${
                         isActive ? 'opacity-100' : 'opacity-50'
                       } text-black text-sm sm:text-base md:text-lg font-semibold`}

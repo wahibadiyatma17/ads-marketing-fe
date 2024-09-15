@@ -15,24 +15,37 @@ const Navbar = () => {
         <header className="px-4 lg:px-6 py-2 flex items-center w-full justify-between bg-white max-w-[1440px] mx-auto">
           <Link className="flex items-center justify-start gap-4" href="/">
             <Image src={'/logo-lq.webp'} alt="logo" width={56} height={56} />
-            <span className="text-black text-[24px]">Learn Quran</span>
+
+            <span
+              className="text-black text-[24px]"
+              style={{ fontFamily: "'Quattrocento', serif" }}
+            >
+              Learn Quran
+            </span>
           </Link>
           <nav className="hidden md:flex gap-4 sm:gap-6 items-center justify-center">
             <Link
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#advatages-section"
+              href="/#advatages-section"
             >
               Advantages
             </Link>
             <Link
               className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
-              href="#ad-placement"
+              href="/#ad-placement"
             >
               Ad Placements
             </Link>
             <Link
+              className="text-[20px] font-medium hover:underline underline-offset-4 text-black"
+              href="/ad-sizes"
+              target="_blank"
+            >
+              Ad Format & Size
+            </Link>
+            <Link
               className="text-[20px] font-medium text-white bg-[#022739] px-4 py-2 rounded-lg"
-              href="#start-advertise-now"
+              href="/#start-advertise-now"
             >
               Get Started
             </Link>

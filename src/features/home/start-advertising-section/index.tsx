@@ -1,10 +1,10 @@
 import { Input, Select } from 'antd';
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import toast from 'react-hot-toast';
 import styled from 'styled-components';
 import { collection, addDoc } from 'firebase/firestore';
 import db from '@/lib/firestore';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, FormProvider, Controller } from 'react-hook-form';
 import moment from 'moment';
 
 type FormInput = {
@@ -15,41 +15,36 @@ type FormInput = {
 };
 
 const StartAdvertisingSection: FC = () => {
-  const { handleSubmit, setValue } = useForm<FormInput>();
-  const onSubmit: SubmitHandler<FormInput> = async (data) => {
-    if (!data.fullname && !data.email && !data.budget && !data.businessEntityName)
-      return toast.error('Form can not be empty');
-    if (!data.fullname) return toast.error('Fullname can not be empty');
-    if (!data.email) return toast.error('Email can not be empty');
-    if (!data.businessEntityName) return toast.error('Business/entity name can not be empty');
-    if (!data.budget) return toast.error('Advertising Budget can not be empty');
+  const form = useForm<FormInput>();
+  const onSubmit = form.handleSubmit(
+    useCallback(async (data) => {
+      const botToken = '7404845445:AAEjf6AZ0T_jbT2dymUF818Ow-amWgDQFrY';
+      const chatId = '-4501363919';
+      const currentDate = moment(new Date()).format('DD MMM YYYY');
+      const message = `A new client has been registered with the following details:\n\Date: ${currentDate}\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
 
-    const botToken = '7404845445:AAEjf6AZ0T_jbT2dymUF818Ow-amWgDQFrY';
-    const chatId = '-4501363919';
-    const currentDate = moment(new Date()).format('DD MMM YYYY');
-    const message = `A new client has been registered with the following details:\n\Date: ${currentDate}\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+        message,
+      )}`;
 
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
-      message,
-    )}`;
+      try {
+        await addDoc(collection(db, 'advertise-form'), {
+          fullname: data.fullname,
+          email: data.email,
+          businessEntityName: data.businessEntityName,
+          budget: data.budget,
+          date: currentDate,
+        });
 
-    try {
-      await addDoc(collection(db, 'advertise-form'), {
-        fullname: data.fullname,
-        email: data.email,
-        businessEntityName: data.businessEntityName,
-        budget: data.budget,
-        date: currentDate,
-      });
-
-      await fetch(url, {
-        method: 'POST',
-      });
-      toast.success('Message sent!');
-    } catch (e) {
-      toast.error('Server Error');
-    }
-  };
+        await fetch(url, {
+          method: 'POST',
+        });
+        toast.success('Message sent!');
+      } catch (e) {
+        toast.error('Server Error');
+      }
+    }, []),
+  );
 
   return (
     <section className="bg-[#EDEFF7]" id="start-advertise-now">
@@ -65,46 +60,103 @@ const StartAdvertisingSection: FC = () => {
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm sm:max-w-md md:max-w-lg space-y-4">
-              <form className="grid gap-4">
-                <Input
-                  placeholder="Fullname"
-                  size={'large'}
-                  onChange={(e) => setValue('fullname', e.target.value)}
-                />
-                <Input
-                  placeholder="Email"
-                  size={'large'}
-                  onChange={(e) => setValue('email', e.target.value)}
-                />
-                <Input
-                  placeholder="Business/Entity Name"
-                  size={'large'}
-                  onChange={(e) => setValue('businessEntityName', e.target.value)}
-                />
+              <FormProvider {...form}>
+                <form className="grid gap-4">
+                  <Controller
+                    control={form.control}
+                    name={'fullname'}
+                    rules={{
+                      required: 'Full Name can not be empty',
+                    }}
+                    render={({ field, fieldState }) => (
+                      <div className="flex flex-col gap-1 items-start">
+                        <Input
+                          placeholder="Full Name*"
+                          size={'large'}
+                          onChange={(event) => field.onChange(event.target?.value)}
+                        />
+                        {fieldState.error && (
+                          <p className="text-[#F74A5C] text-sm">{fieldState.error.message}</p>
+                        )}
+                      </div>
+                    )}
+                  />
+                  <Controller
+                    control={form.control}
+                    name={'email'}
+                    rules={{
+                      required: 'Email can not be empty',
+                    }}
+                    render={({ field, fieldState }) => (
+                      <div className="flex flex-col gap-1 items-start">
+                        <Input
+                          placeholder="Email*"
+                          size={'large'}
+                          onChange={(event) => field.onChange(event.target?.value)}
+                        />
+                        {fieldState.error && (
+                          <p className="text-[#F74A5C] text-sm">{fieldState.error.message}</p>
+                        )}
+                      </div>
+                    )}
+                  />
+                  <Controller
+                    control={form.control}
+                    name={'businessEntityName'}
+                    rules={{
+                      required: 'Business/Entity Name can not be empty',
+                    }}
+                    render={({ field, fieldState }) => (
+                      <div className="flex flex-col gap-1 items-start">
+                        <Input
+                          placeholder="Business/Entity Name*"
+                          size={'large'}
+                          onChange={(event) => field.onChange(event.target?.value)}
+                        />
+                        {fieldState.error && (
+                          <p className="text-[#F74A5C] text-sm">{fieldState.error.message}</p>
+                        )}
+                      </div>
+                    )}
+                  />
+                  <Controller
+                    control={form.control}
+                    name={'budget'}
+                    rules={{
+                      required: 'Advertising Budget can not be empty',
+                    }}
+                    render={({ field, fieldState }) => (
+                      <div className="flex flex-col gap-1 items-start">
+                        <StyledSelect
+                          size={'large'}
+                          style={{ width: '100%' }}
+                          placeholder={'Advertising Budget (USD)*'}
+                          allowClear
+                          onChange={(e) => field.onChange(e)}
+                          options={[
+                            { value: '<100 USD', label: '<100 USD' },
+                            { value: '100 USD - 500 USD', label: '100 USD - 500 USD' },
+                            { value: '500 USD - 1000 USD', label: '500 USD - 1000 USD' },
+                            { value: '1000 USD - 5000 USD', label: '1000 USD - 5000 USD' },
+                            { value: '5000 USD - 10000 USD', label: '5000 USD - 10000 USD' },
+                            { value: '>10000 USD', label: '>10000 USD' },
+                          ]}
+                        />
+                        {fieldState.error && (
+                          <p className="text-[#F74A5C] text-sm">{fieldState.error.message}</p>
+                        )}
+                      </div>
+                    )}
+                  />
 
-                <StyledSelect
-                  size={'large'}
-                  style={{ width: '100%' }}
-                  placeholder={'Advertising Budget (USD)'}
-                  allowClear
-                  onChange={(e) => setValue('budget', e as string)}
-                  options={[
-                    { value: '<100 USD', label: '<100 USD' },
-                    { value: '100 USD - 500 USD', label: '100 USD - 500 USD' },
-                    { value: '500 USD - 1000 USD', label: '500 USD - 1000 USD' },
-                    { value: '1000 USD - 5000 USD', label: '1000 USD - 5000 USD' },
-                    { value: '5000 USD - 10000 USD', label: '5000 USD - 10000 USD' },
-                    { value: '>10000 USD', label: '>10000 USD' },
-                  ]}
-                />
-
-                <div
-                  className="w-full bg-[#022739] text-white py-2 rounded-lg cursor-pointer text-center"
-                  onClick={handleSubmit(onSubmit)}
-                >
-                  Send
-                </div>
-              </form>
+                  <div
+                    className="w-full bg-[#022739] text-white py-2 rounded-lg cursor-pointer text-center"
+                    onClick={onSubmit}
+                  >
+                    Send
+                  </div>
+                </form>
+              </FormProvider>
             </div>
           </div>
         </div>
