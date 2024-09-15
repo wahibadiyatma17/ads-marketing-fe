@@ -6,6 +6,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import db from '@/lib/firestore';
 import { useForm, SubmitHandler, FormProvider, Controller } from 'react-hook-form';
 import moment from 'moment';
+import { validateEmail } from '@/lib/utils';
 
 type FormInput = {
   fullname: string;
@@ -71,6 +72,9 @@ const StartAdvertisingSection: FC = () => {
                     render={({ field, fieldState }) => (
                       <div className="flex flex-col gap-1 items-start">
                         <Input
+                          style={{
+                            borderColor: fieldState.error ? '#F74A5C' : 'transparent',
+                          }}
                           placeholder="Full Name*"
                           size={'large'}
                           onChange={(event) => field.onChange(event.target?.value)}
@@ -84,12 +88,13 @@ const StartAdvertisingSection: FC = () => {
                   <Controller
                     control={form.control}
                     name={'email'}
-                    rules={{
-                      required: 'Email can not be empty',
-                    }}
+                    rules={{ validate: validateEmail }}
                     render={({ field, fieldState }) => (
                       <div className="flex flex-col gap-1 items-start">
                         <Input
+                          style={{
+                            borderColor: fieldState.error ? '#F74A5C' : 'transparent',
+                          }}
                           placeholder="Email*"
                           size={'large'}
                           onChange={(event) => field.onChange(event.target?.value)}
@@ -109,6 +114,9 @@ const StartAdvertisingSection: FC = () => {
                     render={({ field, fieldState }) => (
                       <div className="flex flex-col gap-1 items-start">
                         <Input
+                          style={{
+                            borderColor: fieldState.error ? '#F74A5C' : 'transparent',
+                          }}
                           placeholder="Business/Entity Name*"
                           size={'large'}
                           onChange={(event) => field.onChange(event.target?.value)}
@@ -128,8 +136,13 @@ const StartAdvertisingSection: FC = () => {
                     render={({ field, fieldState }) => (
                       <div className="flex flex-col gap-1 items-start">
                         <StyledSelect
+                          style={{
+                            borderWidth: fieldState.error ? 1 : 0,
+                            borderRadius: 10,
+                            borderColor: fieldState.error ? '#F74A5C' : 'transparent',
+                            width: '100%',
+                          }}
                           size={'large'}
-                          style={{ width: '100%' }}
                           placeholder={'Advertising Budget (USD)*'}
                           allowClear
                           onChange={(e) => field.onChange(e)}
