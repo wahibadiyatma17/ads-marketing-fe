@@ -77,19 +77,25 @@ const Navbar = () => {
           <nav className="md:hidden bg-white px-4 py-2">
             <Link
               className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#advatages-section"
+              href="/#advatages-section"
             >
               Advantages
             </Link>
             <Link
               className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
-              href="#ad-placement"
+              href="/#ad-placement"
             >
               Ad Placement
             </Link>
             <Link
+              className="block text-[20px] font-medium hover:underline underline-offset-4 text-black py-2"
+              href="/ad-sizes"
+            >
+              Ad Format & Size
+            </Link>
+            <Link
               className="block text-[20px] font-medium text-white bg-[#022739] px-4 py-2 rounded-lg mt-2"
-              href="#"
+              href="/#start-advertise-now"
             >
               Get Started
             </Link>

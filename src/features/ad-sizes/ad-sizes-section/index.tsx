@@ -1,5 +1,5 @@
 import { ADS_PLACEMENT_OPTIONS, AdsPlacementKey } from '@/lib/constants';
-import Image from 'next/image';
+import { Image, Spin } from 'antd';
 import { FC, useState } from 'react';
 
 const AdSizes: FC = () => {
@@ -26,10 +26,14 @@ const AdSizes: FC = () => {
               </div>
               <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                 <Image
+                  loading="lazy"
                   src={`/ad-placement/${app}-ad-2.webp`}
-                  alt={`ads ${app}`}
-                  layout="fill"
-                  objectFit="contain"
+                  alt={`ads ${activeAds}`}
+                  placeholder={
+                    <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                      <Spin />
+                    </div>
+                  }
                 />
               </div>
             </div>
@@ -51,10 +55,14 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      loading="lazy"
                       src={`/ad-placement/${app}-ad-3.webp`}
                       alt={`ads ${app}`}
-                      layout="fill"
-                      objectFit="contain"
+                      placeholder={
+                        <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                          <Spin />
+                        </div>
+                      }
                     />
                   </div>
                 </div>
@@ -76,10 +84,14 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      loading="lazy"
                       src={`/ad-placement/${app}-ad-1.webp`}
                       alt={`ads ${app}`}
-                      layout="fill"
-                      objectFit="contain"
+                      placeholder={
+                        <div className="flex items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                          <Spin />
+                        </div>
+                      }
                     />
                   </div>
                 </div>
@@ -108,10 +120,14 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      loading="lazy"
                       src={`/ad-placement/${app}-ad-1.webp`}
                       alt={`ads ${app}`}
-                      layout="fill"
-                      objectFit="contain"
+                      placeholder={
+                        <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                          <Spin />
+                        </div>
+                      }
                     />
                   </div>
                 </div>
@@ -133,10 +149,14 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      loading="lazy"
                       src={`/ad-placement/${app}-ad-2.webp`}
                       alt={`ads ${app}`}
-                      layout="fill"
-                      objectFit="contain"
+                      placeholder={
+                        <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                          <Spin />
+                        </div>
+                      }
                     />
                   </div>
                 </div>
@@ -158,10 +178,14 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      loading="lazy"
                       src={`/ad-placement/${app}-ad-3.webp`}
                       alt={`ads ${app}`}
-                      layout="fill"
-                      objectFit="contain"
+                      placeholder={
+                        <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                          <Spin />
+                        </div>
+                      }
                     />
                   </div>
                 </div>
@@ -190,10 +214,14 @@ const AdSizes: FC = () => {
 
                 <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
+                    loading="lazy"
                     src={`/ad-placement/${activeAds}-ad-1.webp`}
                     alt={`ads ${activeAds}`}
-                    layout="fill"
-                    objectFit="contain"
+                    placeholder={
+                      <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px]">
+                        <Spin />
+                      </div>
+                    }
                   />
                 </div>
               </div>
@@ -208,10 +236,14 @@ const AdSizes: FC = () => {
 
                 <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
+                    loading="lazy"
                     src={`/ad-placement/${activeAds}-ad-3.webp`}
                     alt={`ads ${activeAds}`}
-                    layout="fill"
-                    objectFit="contain"
+                    placeholder={
+                      <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px]">
+                        <Spin />
+                      </div>
+                    }
                   />
                 </div>
               </div>
@@ -219,17 +251,21 @@ const AdSizes: FC = () => {
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2 w-full items-center justify-center">
                   <span className="text-black text-base md:text-lg">Banner Open App</span>
-                  <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">420px x 420px</span>
+                  <div className="h-[210px] md:h-[420px] w-full max-w-[210px] md:max-w-[420px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
+                    <span className="text-black text-base md:text-lg">420x420px</span>
                   </div>
                 </div>
 
                 <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
+                    loading="lazy"
                     src={`/ad-placement/${activeAds}-ad-2.webp`}
                     alt={`ads ${activeAds}`}
-                    layout="fill"
-                    objectFit="contain"
+                    placeholder={
+                      <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px]">
+                        <Spin />
+                      </div>
+                    }
                   />
                 </div>
               </div>
@@ -244,7 +280,10 @@ const AdSizes: FC = () => {
       <div className="w-full py-12 flex flex-col items-center justify-center bg-white max-w-[1440px] mx-auto gap-10">
         <div className="container space-y-12 px-4 md:px-6 flex flex-col items-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]">
+            <h2
+              className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]"
+              style={{ fontFamily: "'Quattrocento', serif" }}
+            >
               Ads Format and Size
             </h2>
 

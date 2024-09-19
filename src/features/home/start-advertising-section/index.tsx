@@ -53,7 +53,10 @@ const StartAdvertisingSection: FC = () => {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center gap-10 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]">
+              <h2
+                className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]"
+                style={{ fontFamily: "'Quattrocento', serif" }}
+              >
                 Start Advertising Now
               </h2>
               <p className="max-w-[900px] text-black text-base md:text-lg lg:text-xl">

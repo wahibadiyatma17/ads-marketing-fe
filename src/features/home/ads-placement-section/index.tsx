@@ -1,10 +1,10 @@
 import { ADS_PLACEMENT_OPTIONS, AdsPlacementKey } from '@/lib/constants';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { FC, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
+import { Image, Spin } from 'antd';
 
 const AdsPlacement: FC = () => {
   const [activeAds, setActiveAds] = useState<AdsPlacementKey>('learn-quran-tajwid');
@@ -39,6 +39,7 @@ const AdsPlacement: FC = () => {
   const settings: Settings = {
     dots: true,
     infinite: true,
+    lazyLoad: 'ondemand',
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -51,7 +52,10 @@ const AdsPlacement: FC = () => {
       <div className="w-full py-12 md:py-24 lg:py-32 flex flex-col items-center justify-center bg-white max-w-[1440px] mx-auto gap-10">
         <div className="container space-y-12 px-4 md:px-6 flex flex-col items-center">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]">
+            <h2
+              className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#022739]"
+              style={{ fontFamily: "'Quattrocento', serif" }}
+            >
               Ad Placements
             </h2>
           </div>
@@ -88,6 +92,7 @@ const AdsPlacement: FC = () => {
                       className={`${
                         isActive ? 'opacity-100' : 'opacity-50'
                       } text-black text-sm sm:text-base md:text-lg font-semibold`}
+                      style={{ fontFamily: "'Quattrocento', serif" }}
                     >
                       {ad.name}
                     </span>
@@ -103,10 +108,14 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
+                          loading="lazy"
                           src={`/ad-placement/${activeAds}-ad-1.webp`}
                           alt={`ads ${activeAds}`}
-                          layout="fill"
-                          objectFit="contain"
+                          placeholder={
+                            <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px]">
+                              <Spin />
+                            </div>
+                          }
                         />
                       </div>
                     </div>
@@ -115,10 +124,14 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
+                          loading="lazy"
                           src={`/ad-placement/${activeAds}-ad-2.webp`}
                           alt={`ads ${activeAds}`}
-                          layout="fill"
-                          objectFit="contain"
+                          placeholder={
+                            <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px]">
+                              <Spin />
+                            </div>
+                          }
                         />
                       </div>
                     </div>
@@ -129,8 +142,12 @@ const AdsPlacement: FC = () => {
                         <Image
                           src={`/ad-placement/${activeAds}-ad-3.webp`}
                           alt={`ads ${activeAds}`}
-                          layout="fill"
-                          objectFit="contain"
+                          loading="lazy"
+                          placeholder={
+                            <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px]">
+                              <Spin />
+                            </div>
+                          }
                         />
                       </div>
                     </div>
@@ -143,8 +160,11 @@ const AdsPlacement: FC = () => {
                       <Image
                         src={`/ad-placement/${activeAds}-ad-1.webp`}
                         alt={`ads ${activeAds}`}
-                        layout="fill"
-                        objectFit="contain"
+                        placeholder={
+                          <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                            <Spin />
+                          </div>
+                        }
                       />
                     </div>
                   </div>
@@ -153,8 +173,11 @@ const AdsPlacement: FC = () => {
                       <Image
                         src={`/ad-placement/${activeAds}-ad-2.webp`}
                         alt={`ads ${activeAds}`}
-                        layout="fill"
-                        objectFit="contain"
+                        placeholder={
+                          <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                            <Spin />
+                          </div>
+                        }
                       />
                     </div>
                   </div>
@@ -163,8 +186,11 @@ const AdsPlacement: FC = () => {
                       <Image
                         src={`/ad-placement/${activeAds}-ad-3.webp`}
                         alt={`ads ${activeAds}`}
-                        layout="fill"
-                        objectFit="contain"
+                        placeholder={
+                          <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
+                            <Spin />
+                          </div>
+                        }
                       />
                     </div>
                   </div>
