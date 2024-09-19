@@ -1,20 +1,22 @@
 import { ADS_PLACEMENT_OPTIONS, AdsPlacementKey } from '@/lib/constants';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { Image, Spin } from 'antd';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { FC, useState } from 'react';
 import Slider, { Settings } from 'react-slick';
-import { Image, Spin } from 'antd';
+import { useWindowSize } from 'usehooks-ts';
 
 const AdsPlacement: FC = () => {
   const [activeAds, setActiveAds] = useState<AdsPlacementKey>('learn-quran-tajwid');
-  const router = useRouter();
+  const { width } = useWindowSize();
+  const isSmallScreen = width < 640;
+  const isMediumScreen = width < 758;
 
   function NextArrow(props: any) {
     const { style, onClick } = props;
     return (
       <div
-        className="absolute top-[50%] right-0 cursor-pointer"
+        className="absolute top-[50%] right-[-32px] cursor-pointer"
         style={{ ...style }}
         onClick={onClick}
       >
@@ -27,7 +29,7 @@ const AdsPlacement: FC = () => {
     const { style, onClick } = props;
     return (
       <div
-        className="absolute z-20 top-[50%] left-0 cursor-pointer"
+        className="absolute z-20 top-[50%] left-[-32px] cursor-pointer"
         style={{ ...style, display: 'block' }}
         onClick={onClick}
       >
@@ -108,6 +110,9 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
+                          height={isSmallScreen ? 200 : isMediumScreen ? 240 : 260}
+                          width={'100%'}
+                          style={{ objectFit: 'contain' }}
                           loading="lazy"
                           src={`/ad-placement/${activeAds}-ad-1.webp`}
                           alt={`ads ${activeAds}`}
@@ -124,6 +129,9 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
+                          height={isSmallScreen ? 200 : isMediumScreen ? 240 : 260}
+                          width={'100%'}
+                          style={{ objectFit: 'contain' }}
                           loading="lazy"
                           src={`/ad-placement/${activeAds}-ad-2.webp`}
                           alt={`ads ${activeAds}`}
@@ -140,6 +148,9 @@ const AdsPlacement: FC = () => {
                     <div className="flex w-full h-[300px] sm:h-[400px] md:h-[568px] items-center justify-center">
                       <div className="mx-auto w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px] relative">
                         <Image
+                          height={isSmallScreen ? 200 : isMediumScreen ? 240 : 260}
+                          width={'100%'}
+                          style={{ objectFit: 'contain' }}
                           src={`/ad-placement/${activeAds}-ad-3.webp`}
                           alt={`ads ${activeAds}`}
                           loading="lazy"
@@ -158,6 +169,9 @@ const AdsPlacement: FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                       <Image
+                        height={isSmallScreen ? 400 : 568}
+                        width={'100%'}
+                        style={{ objectFit: 'contain' }}
                         src={`/ad-placement/${activeAds}-ad-1.webp`}
                         alt={`ads ${activeAds}`}
                         placeholder={
@@ -171,6 +185,9 @@ const AdsPlacement: FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                       <Image
+                        height={isSmallScreen ? 400 : 568}
+                        width={'100%'}
+                        style={{ objectFit: 'contain' }}
                         src={`/ad-placement/${activeAds}-ad-2.webp`}
                         alt={`ads ${activeAds}`}
                         placeholder={
@@ -184,6 +201,9 @@ const AdsPlacement: FC = () => {
                   <div className="flex items-center justify-center">
                     <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                       <Image
+                        height={isSmallScreen ? 400 : 568}
+                        width={'100%'}
+                        style={{ objectFit: 'contain' }}
                         src={`/ad-placement/${activeAds}-ad-3.webp`}
                         alt={`ads ${activeAds}`}
                         placeholder={

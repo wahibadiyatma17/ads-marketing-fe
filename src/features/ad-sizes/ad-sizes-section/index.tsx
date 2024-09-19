@@ -1,9 +1,13 @@
 import { ADS_PLACEMENT_OPTIONS, AdsPlacementKey } from '@/lib/constants';
 import { Image, Spin } from 'antd';
 import { FC, useState } from 'react';
+import { useWindowSize } from 'usehooks-ts';
 
 const AdSizes: FC = () => {
   const [activeAds, setActiveAds] = useState<AdsPlacementKey>('learn-quran-tajwid');
+  const { width } = useWindowSize();
+  const isSmallScreen = width < 640;
+  const isMediumScreen = width < 758;
 
   const renderAdSize = (app: AdsPlacementKey) => {
     switch (app) {
@@ -21,11 +25,14 @@ const AdSizes: FC = () => {
               <div className="flex flex-col gap-2 w-full items-center justify-center">
                 <span className="text-black text-base md:text-lg">IAB Full-Size Banner</span>
                 <div className="h-[60px] w-full max-w-[468px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                  <span className="text-black text-base md:text-lg">468px x 60px</span>
+                  <span className="text-black text-base md:text-lg">468x60px</span>
                 </div>
               </div>
               <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                 <Image
+                  height={isSmallScreen ? 400 : 568}
+                  width={'100%'}
+                  style={{ objectFit: 'contain' }}
                   loading="lazy"
                   src={`/ad-placement/${app}-ad-2.webp`}
                   alt={`ads ${activeAds}`}
@@ -55,6 +62,9 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      height={isSmallScreen ? 400 : 568}
+                      width={'100%'}
+                      style={{ objectFit: 'contain' }}
                       loading="lazy"
                       src={`/ad-placement/${app}-ad-3.webp`}
                       alt={`ads ${app}`}
@@ -84,6 +94,9 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      height={isSmallScreen ? 400 : 568}
+                      width={'100%'}
+                      style={{ objectFit: 'contain' }}
                       loading="lazy"
                       src={`/ad-placement/${app}-ad-1.webp`}
                       alt={`ads ${app}`}
@@ -120,6 +133,9 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      height={isSmallScreen ? 400 : 568}
+                      width={'100%'}
+                      style={{ objectFit: 'contain' }}
                       loading="lazy"
                       src={`/ad-placement/${app}-ad-1.webp`}
                       alt={`ads ${app}`}
@@ -149,6 +165,9 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      height={isSmallScreen ? 400 : 568}
+                      width={'100%'}
+                      style={{ objectFit: 'contain' }}
                       loading="lazy"
                       src={`/ad-placement/${app}-ad-2.webp`}
                       alt={`ads ${app}`}
@@ -178,6 +197,9 @@ const AdSizes: FC = () => {
 
                   <div className="mx-auto w-[250px] sm:w-[320px] h-[400px] sm:h-[568px] relative">
                     <Image
+                      height={isSmallScreen ? 400 : 568}
+                      width={'100%'}
+                      style={{ objectFit: 'contain' }}
                       loading="lazy"
                       src={`/ad-placement/${app}-ad-3.webp`}
                       alt={`ads ${app}`}
@@ -208,12 +230,15 @@ const AdSizes: FC = () => {
                 <div className="flex flex-col gap-2 w-full items-center justify-center">
                   <span className="text-black text-base md:text-lg">Banner Menu</span>
                   <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">320px x 70px</span>
+                    <span className="text-black text-base md:text-lg">320x70px</span>
                   </div>
                 </div>
 
                 <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
+                    height={isSmallScreen ? 200 : isMediumScreen ? 240 : 520}
+                    width={'100%'}
+                    style={{ objectFit: 'contain' }}
                     loading="lazy"
                     src={`/ad-placement/${activeAds}-ad-1.webp`}
                     alt={`ads ${activeAds}`}
@@ -230,12 +255,15 @@ const AdSizes: FC = () => {
                 <div className="flex flex-col gap-2 w-full items-center justify-center">
                   <span className="text-black text-base md:text-lg">Banner Exit</span>
                   <div className="h-[70px] w-full max-w-[320px] border-[1px] border-dashed border-gray-400 flex items-center justify-center">
-                    <span className="text-black text-base md:text-lg">320px x 70px</span>
+                    <span className="text-black text-base md:text-lg">320x70px</span>
                   </div>
                 </div>
 
                 <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
+                    height={isSmallScreen ? 200 : isMediumScreen ? 240 : 520}
+                    width={'100%'}
+                    style={{ objectFit: 'contain' }}
                     loading="lazy"
                     src={`/ad-placement/${activeAds}-ad-3.webp`}
                     alt={`ads ${activeAds}`}
@@ -258,6 +286,9 @@ const AdSizes: FC = () => {
 
                 <div className="mx-auto w-[300px] sm:w-[400px] md:w-[864px] h-[200px] sm:h-[240px] md:h-[520px] relative">
                   <Image
+                    height={isSmallScreen ? 200 : isMediumScreen ? 240 : 520}
+                    width={'100%'}
+                    style={{ objectFit: 'contain' }}
                     loading="lazy"
                     src={`/ad-placement/${activeAds}-ad-2.webp`}
                     alt={`ads ${activeAds}`}
