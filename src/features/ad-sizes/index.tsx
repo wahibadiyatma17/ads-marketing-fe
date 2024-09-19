@@ -13,7 +13,7 @@ export function AdSizes() {
         <AdSizesSection />
       </main>
       <Footer />
-      <Toaster />
+      <Toaster position="bottom-center" />
     </div>
   );
 }

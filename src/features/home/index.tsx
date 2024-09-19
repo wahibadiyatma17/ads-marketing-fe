@@ -19,7 +19,7 @@ export function Home() {
         <StartAdvertisingSection />
       </main>
       <Footer />
-      <Toaster />
+      <Toaster position="bottom-center" />
     </div>
   );
 }

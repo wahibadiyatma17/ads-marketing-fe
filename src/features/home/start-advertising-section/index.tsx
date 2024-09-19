@@ -1,5 +1,5 @@
-import { Input, Select } from 'antd';
-import { FC, useCallback } from 'react';
+import { Input, Select, Spin } from 'antd';
+import { FC, useCallback, useState } from 'react';
 import toast from 'react-hot-toast';
 import styled from 'styled-components';
 import { collection, addDoc } from 'firebase/firestore';
@@ -16,9 +16,11 @@ type FormInput = {
 };
 
 const StartAdvertisingSection: FC = () => {
+  const [submitLoading, setSubmitLoading] = useState(false);
   const form = useForm<FormInput>();
   const onSubmit = form.handleSubmit(
     useCallback(async (data) => {
+      setSubmitLoading(true);
       const botToken = '7404845445:AAEjf6AZ0T_jbT2dymUF818Ow-amWgDQFrY';
       const chatId = '-4501363919';
       const currentDate = moment(new Date()).format('DD MMM YYYY');
@@ -40,10 +42,14 @@ const StartAdvertisingSection: FC = () => {
         await fetch(url, {
           method: 'POST',
         });
-        toast.success('Message sent!');
+        form.reset();
+        toast.success(
+          'Thank you for filling out the form. We have received your information and will contact you shortly.',
+        );
       } catch (e) {
         toast.error('Server Error');
       }
+      setSubmitLoading(false);
     }, []),
   );
 
@@ -75,6 +81,7 @@ const StartAdvertisingSection: FC = () => {
                     render={({ field, fieldState }) => (
                       <div className="flex flex-col gap-1 items-start">
                         <Input
+                          value={field.value}
                           style={{
                             borderColor: fieldState.error ? '#F74A5C' : 'transparent',
                           }}
@@ -95,6 +102,7 @@ const StartAdvertisingSection: FC = () => {
                     render={({ field, fieldState }) => (
                       <div className="flex flex-col gap-1 items-start">
                         <Input
+                          value={field.value}
                           style={{
                             borderColor: fieldState.error ? '#F74A5C' : 'transparent',
                           }}
@@ -117,6 +125,7 @@ const StartAdvertisingSection: FC = () => {
                     render={({ field, fieldState }) => (
                       <div className="flex flex-col gap-1 items-start">
                         <Input
+                          value={field.value}
                           style={{
                             borderColor: fieldState.error ? '#F74A5C' : 'transparent',
                           }}
@@ -148,6 +157,7 @@ const StartAdvertisingSection: FC = () => {
                           size={'large'}
                           placeholder={'Advertising Budget (USD)*'}
                           allowClear
+                          value={field.value}
                           onChange={(e) => field.onChange(e)}
                           options={[
                             { value: '<100 USD', label: '<100 USD' },
@@ -165,12 +175,13 @@ const StartAdvertisingSection: FC = () => {
                     )}
                   />
 
-                  <div
+                  <button
                     className="w-full bg-[#022739] text-white py-2 rounded-lg cursor-pointer text-center"
                     onClick={onSubmit}
+                    disabled={submitLoading}
                   >
-                    Send
-                  </div>
+                    {submitLoading ? <StyledSpin size="small" /> : 'Send'}
+                  </button>
                 </form>
               </FormProvider>
             </div>
@@ -187,5 +198,11 @@ const StyledSelect = styled(Select)`
   .ant-select-selection-placeholder,
   .ant-select-selection-item {
     flex: none;
+  }
+`;
+
+const StyledSpin = styled(Spin)`
+  .ant-spin-dot-item {
+    background-color: white;
   }
 `;
