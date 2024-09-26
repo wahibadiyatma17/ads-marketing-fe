@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useState } from 'react';
 
+import Globe from '@/images/globe.png';
+
 const LandingSection: FC = () => {
   return (
     <section className="bg-white">
@@ -40,7 +42,7 @@ const LandingSection: FC = () => {
             <div className="flex justify-center md:justify-end">
               <div className="relative w-full sm:w-[360px] md:w-[560px] h-[240px] sm:h-[320px]">
                 <Image
-                  src={'/globe.png'}
+                  src={Globe}
                   alt="globe"
                   width={560}
                   height={320}

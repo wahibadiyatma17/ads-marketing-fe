@@ -1,4 +1,4 @@
-import { ADS_PLACEMENT_OPTIONS, AdsPlacementKey } from '@/lib/constants';
+import { ADS_PLACEMENT_IMAGES, ADS_PLACEMENT_OPTIONS, AdsPlacementKey } from '@/lib/constants';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Image, Spin } from 'antd';
 import Link from 'next/link';
@@ -78,7 +78,7 @@ const AdsPlacement: FC = () => {
                   >
                     <div className="relative">
                       <Image
-                        src={ad.iconUrl}
+                        src={ad.iconUrl.src}
                         alt="app icon"
                         width={80}
                         height={80}
@@ -114,7 +114,7 @@ const AdsPlacement: FC = () => {
                           width={'100%'}
                           style={{ objectFit: 'contain' }}
                           loading="lazy"
-                          src={`/ad-placement/${activeAds}-ad-1.webp`}
+                          src={ADS_PLACEMENT_IMAGES.get(activeAds)?.at(0)?.src}
                           alt={`ads ${activeAds}`}
                           placeholder={
                             <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px]">
@@ -133,7 +133,7 @@ const AdsPlacement: FC = () => {
                           width={'100%'}
                           style={{ objectFit: 'contain' }}
                           loading="lazy"
-                          src={`/ad-placement/${activeAds}-ad-2.webp`}
+                          src={ADS_PLACEMENT_IMAGES.get(activeAds)?.at(1)?.src}
                           alt={`ads ${activeAds}`}
                           placeholder={
                             <div className="flex  items-center justify-center w-[300px] sm:w-[400px] md:w-[432px] h-[200px] sm:h-[240px] md:h-[260px]">
@@ -151,7 +151,7 @@ const AdsPlacement: FC = () => {
                           height={isSmallScreen ? 200 : isMediumScreen ? 240 : 260}
                           width={'100%'}
                           style={{ objectFit: 'contain' }}
-                          src={`/ad-placement/${activeAds}-ad-3.webp`}
+                          src={ADS_PLACEMENT_IMAGES.get(activeAds)?.at(2)?.src}
                           alt={`ads ${activeAds}`}
                           loading="lazy"
                           placeholder={
@@ -172,7 +172,7 @@ const AdsPlacement: FC = () => {
                         height={isSmallScreen ? 400 : 568}
                         width={'100%'}
                         style={{ objectFit: 'contain' }}
-                        src={`/ad-placement/${activeAds}-ad-1.webp`}
+                        src={ADS_PLACEMENT_IMAGES.get(activeAds)?.at(0)?.src}
                         alt={`ads ${activeAds}`}
                         placeholder={
                           <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
@@ -188,7 +188,7 @@ const AdsPlacement: FC = () => {
                         height={isSmallScreen ? 400 : 568}
                         width={'100%'}
                         style={{ objectFit: 'contain' }}
-                        src={`/ad-placement/${activeAds}-ad-2.webp`}
+                        src={ADS_PLACEMENT_IMAGES.get(activeAds)?.at(1)?.src}
                         alt={`ads ${activeAds}`}
                         placeholder={
                           <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">
@@ -204,7 +204,7 @@ const AdsPlacement: FC = () => {
                         height={isSmallScreen ? 400 : 568}
                         width={'100%'}
                         style={{ objectFit: 'contain' }}
-                        src={`/ad-placement/${activeAds}-ad-3.webp`}
+                        src={ADS_PLACEMENT_IMAGES.get(activeAds)?.at(2)?.src}
                         alt={`ads ${activeAds}`}
                         placeholder={
                           <div className="flex  items-center justify-center w-[250px] sm:w-[320px] h-[400px] sm:h-[568px]">

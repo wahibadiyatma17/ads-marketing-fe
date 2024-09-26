@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import { FC } from 'react';
 
+import IconAds from '@/images/icon-ads.png';
+import IconAudience from '@/images/icon-audience.png';
+import IconPlacement from '@/images/icon-placement.png';
+
 const AdvertisingReasonSection: FC = () => {
   return (
     <section className="bg-[#EDEFF7]" id="advatages-section">
@@ -18,8 +22,8 @@ const AdvertisingReasonSection: FC = () => {
             <div className="grid gap-1">
               <div className="flex w-full items-center justify-center my-3">
                 <Image
-                  src={'/icon-ads.png'}
-                  alt="LQ Tafsir"
+                  src={IconAds}
+                  alt="Ads Icon"
                   width={285}
                   height={285}
                   className="object-contain"
@@ -32,8 +36,8 @@ const AdvertisingReasonSection: FC = () => {
             <div className="grid gap-1">
               <div className="flex w-full items-center justify-center my-3">
                 <Image
-                  src={'/icon-placement.png'}
-                  alt="LQ Tajwid"
+                  src={IconPlacement}
+                  alt="Placement Icon"
                   width={285}
                   height={285}
                   className="object-contain"
@@ -46,8 +50,8 @@ const AdvertisingReasonSection: FC = () => {
             <div className="grid gap-1">
               <div className="flex w-full items-center justify-center my-3">
                 <Image
-                  src={'/icon-audience.png'}
-                  alt="QTV"
+                  src={IconAudience}
+                  alt="Audience Icon"
                   width={285}
                   height={285}
                   className="object-contain"
