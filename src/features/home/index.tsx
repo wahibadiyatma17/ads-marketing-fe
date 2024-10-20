@@ -19,7 +19,7 @@ export function Home() {
         <StartAdvertisingSection />
       </main>
       <Footer />
-      <Toaster position="bottom-center" />
+      <Toaster position="bottom-center" toastOptions={{duration: 10000}}/>
     </div>
   );
 }

@@ -44,7 +44,7 @@ const AdvertisingReasonSection: FC = () => {
                 />
               </div>
               <h3 className="text-2xl sm:text-3xl text-center font-bold text-[#022739]">
-                Various Ads Placement Options
+                Flexible Ads Placements
               </h3>
             </div>
             <div className="grid gap-1">
@@ -58,7 +58,7 @@ const AdvertisingReasonSection: FC = () => {
                 />
               </div>
               <h3 className="text-2xl sm:text-3xl text-center font-bold text-[#022739]">
-                Qurani Audience
+                Religious Audience
               </h3>
             </div>
           </div>

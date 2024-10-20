@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import styled from 'styled-components';
 import { collection, addDoc } from 'firebase/firestore';
 import db from '@/lib/firestore';
-import { useForm, SubmitHandler, FormProvider, Controller } from 'react-hook-form';
+import { useForm, FormProvider, Controller } from 'react-hook-form';
 import moment from 'moment';
 import { validateEmail } from '@/lib/utils';
 
@@ -31,21 +31,42 @@ const StartAdvertisingSection: FC = () => {
       )}`;
 
       try {
-        await addDoc(collection(db, 'advertise-form'), {
-          fullname: data.fullname,
-          email: data.email,
-          businessEntityName: data.businessEntityName,
-          budget: data.budget,
-          date: currentDate,
+        const sendEmailRes = await fetch('http://localhost:3000/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body:JSON.stringify({
+            fullname: data.fullname,
+            email: data.email,
+            businessEntityName: data.businessEntityName,
+            budget: data.budget,
+            date: currentDate,
+          })
         });
 
-        await fetch(url, {
-          method: 'POST',
-        });
-        form.reset();
-        toast.success(
-          'Thank you for filling out the form. We have received your information and will contact you shortly.',
-        );
+        if(sendEmailRes.ok){
+          await addDoc(collection(db, 'advertise-form'), {
+            fullname: data.fullname,
+            email: data.email,
+            businessEntityName: data.businessEntityName,
+            budget: data.budget,
+            date: currentDate,
+          });
+  
+          await fetch(url, {
+            method: 'POST',
+          });
+          form.reset();
+          toast.success(
+            'Thank you for filling out the form. We have received your information and will contact you shortly.',
+          );
+        } else {
+          toast.error(
+            'An error occurred while sending the message. Please try again later.',
+          );
+        }
+      
       } catch (e) {
         toast.error('Server Error');
       }

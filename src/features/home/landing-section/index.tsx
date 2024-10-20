@@ -30,7 +30,7 @@ const LandingSection: FC = () => {
                 style={{ fontFamily: "'Quattrocento', serif" }}
               >
                 <span style={{ fontFamily: "'Quattrocento', serif" }}>
-                  To <span className="text-black">thousands</span> of users,
+                  To <span className="text-black">thousands</span> of people,
                 </span>
                 <br />
                 <span style={{ fontFamily: "'Quattrocento', serif" }}>
