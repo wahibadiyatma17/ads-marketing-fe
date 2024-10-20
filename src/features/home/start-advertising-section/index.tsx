@@ -15,6 +15,8 @@ type FormInput = {
   budget: string;
 };
 
+const baseAppUrl = 'https://ads-marketing-fe.vercel.app'
+
 const StartAdvertisingSection: FC = () => {
   const [submitLoading, setSubmitLoading] = useState(false);
   const form = useForm<FormInput>();
@@ -31,7 +33,7 @@ const StartAdvertisingSection: FC = () => {
       )}`;
 
       try {
-        const sendEmailRes = await fetch('http://localhost:3000/api/send-email', {
+        const sendEmailRes = await fetch(`${baseAppUrl}/api/send-email`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
