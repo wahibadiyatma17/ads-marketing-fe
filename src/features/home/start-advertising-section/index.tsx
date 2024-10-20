@@ -7,6 +7,7 @@ import db from '@/lib/firestore';
 import { useForm, FormProvider, Controller } from 'react-hook-form';
 import moment from 'moment';
 import { validateEmail } from '@/lib/utils';
+import envConfig from '@/lib/env.config';
 
 type FormInput = {
   fullname: string;
@@ -15,7 +16,6 @@ type FormInput = {
   budget: string;
 };
 
-const baseAppUrl = 'https://ads-marketing-fe.vercel.app'
 
 const StartAdvertisingSection: FC = () => {
   const [submitLoading, setSubmitLoading] = useState(false);
@@ -23,7 +23,7 @@ const StartAdvertisingSection: FC = () => {
   const onSubmit = form.handleSubmit(
     useCallback(async (data) => {
       setSubmitLoading(true);
-      const botToken = '7404845445:AAEjf6AZ0T_jbT2dymUF818Ow-amWgDQFrY';
+      const botToken = `${envConfig.telegramBotToken}`;
       const chatId = '-4501363919';
       const currentDate = moment(new Date()).format('DD MMM YYYY');
       const message = `A new client has been registered with the following details:\n\Date: ${currentDate}\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
@@ -33,7 +33,7 @@ const StartAdvertisingSection: FC = () => {
       )}`;
 
       try {
-        const sendEmailRes = await fetch(`${baseAppUrl}/api/send-email`, {
+        const sendEmailRes = await fetch(`${envConfig.appUrl}/api/send-email`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
