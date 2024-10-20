@@ -17,7 +17,7 @@ export const EmailTemplate: React.FC<Readonly<EmailTemplateProps>> = ({
 }) => (
   <div style={{ fontFamily: 'Arial, sans-serif', padding: '0px 20px', color: '#333' }}>
     <p style={{color: '#000000'}}>السلام عليكم ورحمة الله وبركاته,</p>
-    <p style={{color: '#000000', marginTop:'-12px'}}>A new client has registered with the following details:</p>
+    <p style={{color: '#000000', marginTop:'-12px'}}>A new Learn Quran advertising client has registered with the following details:</p>
 
     <table style={{ width: '100%', borderCollapse: 'collapse', margin:'24px 0px' }}>
       <tbody>
