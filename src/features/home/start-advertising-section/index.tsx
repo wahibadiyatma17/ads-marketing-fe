@@ -25,7 +25,7 @@ const StartAdvertisingSection: FC = () => {
       setSubmitLoading(true);
       const botToken = `${envConfig.telegramBotToken}`;
       const chatId = '-4501363919';
-      const currentDate = moment(new Date()).format('DD MMM YYYY');
+      const currentDate = moment(new Date()).format('dddd, DD MMMM YYYY hh:mm:ss A');
       const message = `A new Learn Quran advertising client has registered with the following details:\n\n\Date: ${currentDate}\nName: ${data.fullname}\nEmail: ${data.email}\nBusiness/Entity Name: ${data.businessEntityName}\nBudget: ${data.budget}`;
 
       const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
